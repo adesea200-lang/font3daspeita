@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finalizar pedido | Fonte das Peita</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="topbar">FINALIZE COM SEGURANÇA • PIX E CARTÃO</div>
+<header><div class="wrap nav"><a href="index.html" class="brand"><img src="assets/logo.png" alt="Fonte das Peita"></a><nav><a href="index.html#catalogo">Camisas</a><a href="medidas.html">Tabela de medidas</a></nav><a class="cart" href="index.html#catalogo">← Continuar comprando</a></div></header>
+<main class="checkout-page wrap">
+  <div class="checkout-head"><small>CHECKOUT</small><h1>Finalizar pedido</h1><p>Informe seus dados e calcule o frete. Depois você escolhe Pix ou cartão no checkout seguro.</p></div>
+  <div class="checkout-layout">
+    <section class="checkout-card">
+      <h2>Seus dados</h2>
+      <div class="checkout-grid">
+        <label>Nome completo<input id="customerName" autocomplete="name" placeholder="Seu nome"></label>
+        <label>E-mail<input id="customerEmail" type="email" autocomplete="email" placeholder="seu@email.com"></label>
+        <label>Telefone / WhatsApp<input id="customerPhone" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000"></label>
+        <label>CEP<input id="shippingCep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9"></label>
+      </div>
+      <div id="addressFields" class="address-fields" style="display:none">
+        <div class="address-found"><span>📍 Endereço encontrado</span><strong id="shippingStreetLabel"></strong><small id="shippingLocationLabel"></small></div>
+        <label>Número<input id="shippingNumber" inputmode="numeric" autocomplete="address-line2" placeholder="Número da residência"></label>
+        <label>Complemento (opcional)<input id="shippingComplement" autocomplete="address-line2" placeholder="Apto, bloco, casa, etc."></label>
+      </div>
+      <button class="gold calc-shipping" id="calcShipping">Calcular frete</button>
+      <div id="shippingStatus" class="checkout-status">Digite seu CEP para ver as opções de entrega.</div>
+      <div id="shippingOptions" class="shipping-options"></div><div class="shipping-posting-note">📦 <strong>Prazo de postagem:</strong> até 2 dias + o prazo do frete escolhido.</div>
+      <div class="checkout-note">🔒 Pagamento processado pelo Mercado Pago. Seus dados de cartão não ficam armazenados no site.</div>
+    </section>
+    <aside class="checkout-card order-summary">
+      <h2>Resumo do pedido</h2>
+      <div id="checkoutItems"></div>
+      <div class="summary-line"><span>Produtos</span><strong id="checkoutSubtotal">R$ 0,00</strong></div>
+      <div class="summary-line"><span>Frete</span><strong id="checkoutShipping">—</strong></div>
+      <div class="summary-total"><span>Total</span><strong id="checkoutTotal">R$ 0,00</strong></div>
+      <button class="checkout-pay" id="payButton" disabled>Escolha o frete para continuar</button>
+      <a class="support-link" id="supportLink" target="_blank" rel="noopener">💬 Precisa de ajuda? Fale conosco no WhatsApp</a>
+    </aside>
+  </div>
+</main>
+<footer><div class="wrap footer"><img src="assets/logo.png" alt="Fonte das Peita"><span>© 2026 Fonte das Peita</span><span>Compra segura</span></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/supabase-config.js"></script><script src="assets/supabase-client.js"></script><script src="assets/app.js"></script><script src="assets/checkout.js"></script>
+</body></html>
